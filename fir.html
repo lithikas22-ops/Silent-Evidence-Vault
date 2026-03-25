@@ -1,47 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cyber Crime FIR</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<form onsubmit="saveData(); return false;">
+    
+    <label>Name</label>
+    <input type="text" id="name" required>
 
-<div class="container">
-    <h2>Cyber Crime FIR Form</h2>
+    <label>Age</label>
+    <input type="number" id="age" required>
 
-    <form action="report.html">
-        <label>Name</label>
-        <input type="text" required>
+    <label>Gender</label>
+    <select id="gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
 
-        <label>Age</label>
-        <input type="number" required>
+    <label>Phone Number</label>
+    <input type="text" id="phone">
 
-        <label>Gender</label>
-        <select>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
+    <label>Email</label>
+    <input type="email" id="email">
 
-        <label>Phone Number</label>
-        <input type="text">
+    <label>Type of Cyber Crime</label>
+    <select id="crime">
+        <option>Hacking</option>
+        <option>Online Fraud</option>
+        <option>Identity Theft</option>
+        <option>Cyber Bullying</option>
+    </select>
 
-        <label>Email</label>
-        <input type="email">
+    <label>Incident Description</label>
+    <textarea id="desc"></textarea>
 
-        <label>Type of Cyber Crime</label>
-        <select>
-            <option>Hacking</option>
-            <option>Online Fraud</option>
-            <option>Identity Theft</option>
-            <option>Cyber Bullying</option>
-        </select>
+    <button type="submit">Generate Report</button>
+</form>
 
-        <label>Incident Description</label>
-        <textarea></textarea>
+<script>
+function saveData() {
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("age", document.getElementById("age").value);
+    localStorage.setItem("gender", document.getElementById("gender").value);
+    localStorage.setItem("phone", document.getElementById("phone").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("crime", document.getElementById("crime").value);
+    localStorage.setItem("desc", document.getElementById("desc").value);
 
-        <button type="submit">Generate Report</button>
-    </form>
-</div>
-
-</body>
-</html>
+    window.location.href = "report.html";
+}
+</script>
