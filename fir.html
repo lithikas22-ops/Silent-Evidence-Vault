@@ -1,47 +1,24 @@
-<form onsubmit="saveData(); return false;">
-    
-    <label>Name</label>
-    <input type="text" id="name" required>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <label>Age</label>
-    <input type="number" id="age" required>
+<div class="container">
+    <h2>Cyber Crime Report</h2>
 
-    <label>Gender</label>
-    <select id="gender">
-        <option>Male</option>
-        <option>Female</option>
-    </select>
+    <p><b>Name:</b> ____________</p>
+    <p><b>Age:</b> ____________</p>
+    <p><b>Gender:</b> ____________</p>
+    <p><b>Phone:</b> ____________</p>
+    <p><b>Email:</b> ____________</p>
+    <p><b>Crime Type:</b> ____________</p>
+    <p><b>Description:</b> ____________</p>
 
-    <label>Phone Number</label>
-    <input type="text" id="phone">
+    <button onclick="window.location.href='thankyou.html'">Submit</button>
+</div>
 
-    <label>Email</label>
-    <input type="email" id="email">
-
-    <label>Type of Cyber Crime</label>
-    <select id="crime">
-        <option>Hacking</option>
-        <option>Online Fraud</option>
-        <option>Identity Theft</option>
-        <option>Cyber Bullying</option>
-    </select>
-
-    <label>Incident Description</label>
-    <textarea id="desc"></textarea>
-
-    <button type="submit">Generate Report</button>
-</form>
-
-<script>
-function saveData() {
-    localStorage.setItem("name", document.getElementById("name").value);
-    localStorage.setItem("age", document.getElementById("age").value);
-    localStorage.setItem("gender", document.getElementById("gender").value);
-    localStorage.setItem("phone", document.getElementById("phone").value);
-    localStorage.setItem("email", document.getElementById("email").value);
-    localStorage.setItem("crime", document.getElementById("crime").value);
-    localStorage.setItem("desc", document.getElementById("desc").value);
-
-    window.location.href = "report.html";
-}
-</script>
+</body>
+</html>
