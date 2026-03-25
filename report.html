@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Generated Report</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<h2>Cyber Crime Report</h2>
 
-<div class="container">
-    <h2>Cyber Crime Report</h2>
+<p><b>Name:</b> <span id="r_name"></span></p>
+<p><b>Age:</b> <span id="r_age"></span></p>
+<p><b>Gender:</b> <span id="r_gender"></span></p>
+<p><b>Phone:</b> <span id="r_phone"></span></p>
+<p><b>Email:</b> <span id="r_email"></span></p>
+<p><b>Crime Type:</b> <span id="r_crime"></span></p>
+<p><b>Description:</b> <span id="r_desc"></span></p>
 
-    <p><b>Name:</b> ____________</p>
-    <p><b>Age:</b> ____________</p>
-    <p><b>Gender:</b> ____________</p>
-    <p><b>Phone:</b> ____________</p>
-    <p><b>Email:</b> ____________</p>
-    <p><b>Crime Type:</b> ____________</p>
-    <p><b>Description:</b> ____________</p>
+<button onclick="downloadPDF()">Download PDF</button>
+<button onclick="window.location.href='thankyou.html'">Submit</button>
 
-    <button onclick="window.location.href='thankyou.html'">Submit</button>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
-</body>
-</html>
+<script>
+document.getElementById("r_name").innerText = localStorage.getItem("name");
+document.getElementById("r_age").innerText = localStorage.getItem("age");
+document.getElementById("r_gender").innerText = localStorage.getItem("gender");
+document.getElementById("r_phone").innerText = localStorage.getItem("phone");
+document.getElementById("r_email").innerText = localStorage.getItem("email");
+document.getElementById("r_crime").innerText = localStorage.getItem("crime");
+document.getElementById("r_desc").innerText = localStorage.getItem("desc");
+
+function downloadPDF() {
+    const element = document.querySelector(".container");
+    html2pdf().from(element).save("CyberCrimeReport.pdf");
+}
+</script>
